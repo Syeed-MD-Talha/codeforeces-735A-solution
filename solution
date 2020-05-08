@@ -1,0 +1,45 @@
+// Bismillahir Rahmanir Rahim
+#include<bits/stdc++.h>
+typedef long long ll;
+typedef unsigned long long ul;
+using namespace std;
+int main()
+{
+   //freopen("a.txt","r",stdin);
+ int n,k,i,c=1,t=1;cin>>n>>k;
+ string st;cin>>st;
+ int f1=st.find('G');//cout<<f1;
+ int f2=st.find('T');
+ if(f1<f2)
+ {
+   for(i=f1;i<st.size();i+=k)
+   {
+      if(st[i]=='T')
+      {
+          c=0;break;
+      }
+      else if(st[i]=='#')
+      {
+          t=0;break;
+      }
+   }
+ }
+ else
+ {
+   for(i=f2;i<st.size();i+=k)
+   {
+      if(st[i]=='G')
+      {
+          c=0;break;
+      }
+      else if(st[i]=='#')
+      {
+          t=0;break;
+      }
+   }
+ }
+ if(c==0&&t==1)cout<<"YES\n";
+ else cout<<"NO\n";
+
+}
+
